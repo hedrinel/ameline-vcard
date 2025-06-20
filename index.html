@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(229, 218, 207);">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
+  <title>
+    Olga Fedele's Digital Business Card
+  </title> <!---->
+  <meta name="author" content="SMART vCARD - by hedri.dev">
+  <meta name="url" content="https://smartvcard.com">
+  <meta name="designer" content="Hedri Nel">
+  <meta property="og:title" content=" Olga Fedele's Digital Business Card">
+  <meta property="twitter:title" content=" Olga Fedele's Digital Business Card">
+  <link rel="stylesheet" href="./style.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body id="body">
+
+  <!-- MODAL -->
+  <div id="modal" style="background-color: rgb(249, 250, 251); visibility: hidden; top: 2rem; opacity: 0;">
+    <div id="closeModal"><a id="close" class="closeBtnColor">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg></div>
+      </a></div>
+    <div id="modalView">
+      <div id="keyInfo">
+        <p class="text" data-i18n="share.messages">
+          Use my public key to send me encrypted messages
+        </p> <a download="" target="_blank" id="dlKey" rel="noreferrer" tabindex="-1"
+          href="./ Olga Fedele's public key.asc" style="background-color: rgb(220, 206, 187);">
+          <div class="icon action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+              stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m4-5l5 5 5-5m-5 5V3"></path>
+            </svg></div> <span class="action" data-i18n="share.key">Download Key</span>
+        </a>
+      </div>
+      <div id="copyView">
+        <p class="text" data-i18n="share.copy">
+          Copy and send the URL to share my Business Card
+        </p> <button id="copyURL" style="background-color: rgb(220, 206, 187);">
+          <div class="icon action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+              stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+            </svg></div> <span class="action" data-i18n="share.copy.btn">Copy URL</span>
+        </button>
+      </div>
+      <div id="qrView">
+        <div id="qr"></div>
+        <h2 class="text" data-i18n="share.qr">Scan the QR Code</h2>
+        <p class="text" data-i18n="share.view">to view my Business Card on another device</p>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div id="topActions" style="display: none;">
+      <!--LANGUAGE BUTTON-->
+      <div id="langSwitcher" class="lang-switcher">
+        <button id="activeLang" class="lang-btn">
+          <img src="https://flagcdn.com/w40/gb.png" alt="EN" data-lang="en">
+        </button>
+        <div id="langOptions" class="lang-options hidden">
+          <button class="lang-btn" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN"></button>
+          <button class="lang-btn" data-lang="it"><img src="https://flagcdn.com/w40/it.png" alt="IT"></button>
+          <button class="lang-btn" data-lang="ru"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></button>
+        </div>
+      </div>
+      <div><a id="share">
+          <div class="icon topAction"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+              clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#fff"
+              stroke-width="2">
+              <circle cx="17" cy="5" r="3"></circle>
+              <circle cx="5" cy="12" r="3"></circle>
+              <circle cx="17" cy="19" r="3"></circle>
+              <path d="M7.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98"></path>
+            </svg></div>
+        </a> <a id="showQR">
+          <div class="icon topAction"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+              clip-rule="evenodd" stroke-linejoin="round">
+              <g fill="none" stroke="#fff" stroke-width="2">
+                <path d="M4 4h4v4H4zm0 12h4v4H4zM16 4h4v4h-4z"></path>
+                <path d="M12 3v15a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2H3"></path>
+              </g>
+              <path fill="#fff" d="M15 15h2v2h-2z"></path>
+            </svg></div>
+        </a></div> <!---->
+    </div>
+    <div class="headerImgC"><!----> <img id="logo" src="./logo.png" alt="Logo" style="margin: 3rem 0px 8rem;"></div>
+  </header>
+  <main style="background-color: rgb(249, 250, 251); margin-top: 0px;">
+    <div id="profile">
+      <div class="headshot-container">
+        <img id="headshot" src="./photo.jpg" alt="Photo">
+
+      </div>
+      <div id="info">
+        <p class="name text">
+          Olga Fedele
+        </p> <!---->
+        <p class="jobtitle text" data-i18n="role">
+          Founder &amp; Creative Director
+        </p>
+      </div>
+    </div>
+    <div class="company">
+
+      <img id="companylogo" src="./company.png" alt="company">
+    </div>
+    <p class="bizaddr text" data-i18n="location">
+      Sicily
+    </p> <br>
+    <p class="desc text" data-i18n="tagline">
+      " Creating events that speak to your soul."
+    </p>
+    <div class="actions">
+      <div id="cta"><a id="vcard" rel="noreferrer" download="" target="_blank" aria-label="Save Contact"
+          href="olgafedele.vcf" style="background-color: rgb(220, 206, 187); width: 90%; padding: 1rem 1.5rem;">
+          <div class="icon action"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+              clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <circle cx="8.5" cy="7" r="4" transform="matrix(.875 0 0 .875 4.563 -.625)" fill="none" stroke="#fff"
+                stroke-width="2.29"></circle>
+              <path d="M5 18c0-3.863 3.137-7 7-7s7 3.137 7 7m-7-2v6m3-3l-3 3-3-3" fill="none" stroke="#fff"
+                stroke-width="2"></path>
+            </svg></div>
+          <p class="action" data-i18n="cta.save">Save Contact</p>
+        </a></div>
+      <div class="actionsC">
+        <div class="actionBtn"><a href="tel:+393516847952" target="_blank" rel="noopener noreferrer" aria-label="call"
+            style="background-color: rgb(220, 206, 187);">
+            <div class="icon action"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z">
+                </path>
+              </svg></div>
+          </a>
+          <p class="text" data-i18n="contact.call">
+            Call
+          </p>
+        </div>
+      </div>
+      <div class="actionsC">
+        <div class="actionBtn"><a target="_blank" rel="noopener noreferrer" aria-label="whatsApp"
+            href="https://wa.me/+393516847952" style="background-color: rgb(220, 206, 187);">
+            <div class="icon action"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" fill="#fff">
+                <path
+                  d="M2.841 16.664A10.987 10.987 0 014.776 3.725c4.297-4.297 11.273-4.297 15.57 0 4.297 4.297 4.297 11.273 0 15.57-3.522 3.522-8.845 4.157-13.018 1.904l-4.142.784a1.002 1.002 0 01-1.167-1.178l.822-4.141zm1.428 3.078l3.045-.576c.238-.045.483-.002.692.12 3.452 2.024 7.966 1.555 10.926-1.405 3.516-3.516 3.516-9.226 0-12.742s-9.226-3.516-12.742 0a8.992 8.992 0 00-1.432 10.86 1 1 0 01.116.696l-.605 3.047z">
+                </path>
+                <path
+                  d="M17.5 14.002v1.512a1.01 1.01 0 01-1.006 1.006c-.03 0-.06-.002-.09-.004a9.948 9.948 0 01-4.34-1.544 9.811 9.811 0 01-3.016-3.017 9.944 9.944 0 01-1.544-4.359A1.01 1.01 0 018.505 6.5h1.508a1.01 1.01 0 011.006.865c.063.483.181.957.352 1.413.137.367.049.782-.227 1.061l-.638.638a8.039 8.039 0 003.017 3.017l.638-.639a1.008 1.008 0 011.061-.226c.456.17.93.288 1.413.352.503.071.877.513.865 1.021z"
+                  fill-rule="nonzero"></path>
+              </svg></div>
+          </a>
+          <p class="text" data-i18n="contact.whatsapp">
+            WhatsApp
+          </p>
+        </div>
+      </div>
+      <div class="actionsC">
+        <div class="actionBtn"><a href="mailto:olga.fedele@ameline.events" target="_blank" rel="noopener noreferrer"
+            aria-label="email" style="background-color: rgb(220, 206, 187);">
+            <div class="icon action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <path d="M22 6l-10 7L2 6"></path>
+              </svg></div>
+          </a>
+          <p class="text" data-i18n="contact.email">
+            Email
+          </p>
+        </div>
+      </div>
+      <div class="actionsC">
+        <div class="actionBtn"><a target="_blank" rel="noopener noreferrer" aria-label="website"
+            href="https://ameline.events" style="background-color: rgb(220, 206, 187);">
+            <div class="icon action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z">
+                </path>
+              </svg></div>
+          </a>
+          <p class="text" data-i18n="contact.website">
+            Website
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="actions secondary">
+        <div class="actionsC">
+          <div class="actionBtn secBtn"><a target="_blank" rel="noopener noreferrer" aria-label="instagram"
+              href="https://www.instagram.com/olga.fedele_ameline.events" style="background: rgb(64, 93, 230);">
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+                  <path
+                    d="M11.999 7.377a4.623 4.623 0 100 9.248 4.623 4.623 0 000-9.248zm0 7.627a3.004 3.004 0 110-6.008 3.004 3.004 0 010 6.008z">
+                  </path>
+                  <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                  <path
+                    d="M20.533 6.111A4.605 4.605 0 0017.9 3.479a6.606 6.606 0 00-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 00-2.184.42 4.6 4.6 0 00-2.633 2.632 6.585 6.585 0 00-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 002.634 2.632 6.584 6.584 0 002.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 002.186-.419 4.613 4.613 0 002.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 00-.421-2.217zm-1.218 9.532a5.043 5.043 0 01-.311 1.688 2.987 2.987 0 01-1.712 1.711 4.985 4.985 0 01-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 01-1.669-.311 2.985 2.985 0 01-1.719-1.711 5.08 5.08 0 01-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 01.311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 011.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 011.67.311 2.991 2.991 0 011.712 1.712 5.08 5.08 0 01.311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z">
+                  </path>
+                </svg></div>
+            </a></div>
+        </div>
+      </div>
+    </div>
+    <div class="attachments">
+      <h2 class="section text" data-i18n="section.services">Services</h2>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.wedding">Weddings & Vow Renewals</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.wedding.desc">
+              Timeless celebrations, intimately designed to honour your story — from destination
+              vows to elegant local gatherings.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.symbolic">Symbolic Ceremonies</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.symbolic.desc">
+              Moments rooted in meaning — whether spiritual, cultural, or uniquely yours —
+              designed to speak to the soul and linger in memory.</p>
+          </div>
+
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.corporate">Corporate Events</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.corporate.desc">
+
+              Professional yet heartfelt — curated gatherings that reflect your brand while
+              engaging with elegance and impact.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.charity"> Charity Galas</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.charity.desc">
+
+              Purpose-driven events that inspire, including fundraisers for children and causes
+              that matter — all delivered with grace and intent.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.themed">Themed Celebrations</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.themed.desc">
+
+              From bespoke beachside soirées to opulent, story-driven experiences, we design
+              atmospheres that captivate — where every detail is curated, and every moment feels indulgently yours.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="label" data-i18n="services.international">International Collaborations</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p data-i18n="services.international.desc">
+
+              Multilingual coordination, legal paperwork, and cultural understanding — all
+              handled with precision, warmth, and care.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="controls prodInfo pd1" style="margin-top: 1%;">
+      <div class="actions" style="margin-top: 0% !important;">
+      </div>
+    </div>
+    </div>
+    </div>
+  </main>
+  <footer class="text" style="background-color: rgb(249, 250, 251);">
+    Powered by
+    <a href="
+            https://hedri.dev" target="_blank" rel="noopener noreferrer" class="text">Hedri.dev</a>
+  </footer>
+  <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.4.4/i18nextHttpBackend.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/i18nextBrowserLanguageDetector.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script src="./vcard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</body>
+
+</html>
