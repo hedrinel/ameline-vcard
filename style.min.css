@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -577,4 +580,8 @@ header::before {
   align-self: center;
   justify-self: center;
   padding: 0 !important;
+}
+#tagline{
+  /* font-family: "Meie Script", cursive;
+  font-size: 1.7rem; */
 }
