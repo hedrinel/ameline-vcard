@@ -530,11 +530,12 @@ header {
   box-sizing: border-box;
   padding-bottom: 0;
   padding-bottom: 0;
-  background-image: url("header-bg.webp");
+  /* background-image: url("header-bg.webp"); */
   background-size: 140%;
   /* Zooms out the image */
   background-position: center;
   background-repeat: no-repeat;
+  background-color: rgb(220, 206, 187);
   /* z-index: -9; */
 }
 
@@ -542,7 +543,7 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(231, 221, 191, 0.4);
+  /* background-color: rgba(231, 221, 191, 0.4); */
   /* light yellow overlay */
   z-index: 1;
   pointer-events: none;

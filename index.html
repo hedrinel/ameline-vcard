@@ -97,8 +97,8 @@
   </header>
   <main style="background-color: rgb(249, 250, 251); margin-top: 0px;">
     <div id="profile">
-      <div class="headshot-container">
-        <img id="headshot" src="./photo.jpg" alt="Photo">
+      <div class="headshot-container" style="z-index: index 888;">
+        <img id="headshot" src="./photo.jpg" alt="Photo" style="z-index: 999; ">
 
       </div>
       <div id="info">
@@ -110,9 +110,10 @@
         </p>
       </div>
     </div>
-    <div class="company">
-
-      <img id="companylogo" src="./company.png" alt="company">
+    <div class="company" style=" display: flex; justify-content: center;  align-items: center;flex-direction: column;">
+      <p style="color: rgb(8, 8, 8)">of</p>
+      <h2 style="color: rgb(141, 128, 110);   padding-top: 0; margin:0;">Ameline Events</h2>
+      <!-- <img id="companylogo" src="./company.png" alt="company"> -->
     </div>
     <p class="bizaddr text" data-i18n="location">
       Sicily
